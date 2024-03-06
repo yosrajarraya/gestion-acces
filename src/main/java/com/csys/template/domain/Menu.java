@@ -6,7 +6,7 @@ package com.csys.template.domain;
 
 import java.io.Serializable;
 import javax.persistence.*;
-
+//jjjjjj
 @Entity
 @Table(name = "Menu", schema = "dbo")
 public class Menu implements Serializable {
