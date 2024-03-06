@@ -33,9 +33,15 @@ spring:
 #        password: ADMIN
         
     datasource:
+
         url: jdbc:sqlserver://DESKTOP-A2L6T6L\SQL2019;databaseName=gestion_acces
         username: sa
         password: 12345
+
+        url: jdbc:sqlserver://172.19.208.1\SQL2019;databaseName=gestion_access
+        username: ADMIN
+        password: ADMIN
+
         
     jpa:
         database-platform: org.hibernate.dialect.SQLServer2012Dialect

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <actions>
         <action>
@@ -8,3 +9,15 @@
             </goals>
         </action>
     </actions>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>CUSTOM-spring-boot:run</actionName>
+            <displayName>spring-boot:run</displayName>
+            <goals>
+                <goal>spring-boot:run</goal>
+            </goals>
+        </action>
+    </actions>
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb

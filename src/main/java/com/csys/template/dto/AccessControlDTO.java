@@ -3,6 +3,7 @@ package com.csys.template.dto;
 import com.csys.template.domain.Group_user;
 import com.csys.template.domain.Utilisateur;
 import java.lang.Boolean;
+<<<<<<< HEAD
 import java.lang.Long;
 import java.lang.String;
 import java.time.LocalDateTime;
@@ -13,6 +14,13 @@ public class AccessControlDTO {
   private Utilisateur user_id;
 
   private Group_user groupId;
+=======
+import java.lang.Integer;
+import java.lang.String;
+
+public class AccessControlDTO {
+  private Integer id;
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
 
   private String code;
 
@@ -24,6 +32,7 @@ public class AccessControlDTO {
 
   private String designation_eng;
 
+<<<<<<< HEAD
   private String description;
 
   private LocalDateTime date_expiration;
@@ -56,6 +65,20 @@ public class AccessControlDTO {
     this.groupId = group_id;
   }
 
+=======
+  private Utilisateur user;
+
+  private Group_user group;
+
+  public Integer getId() {
+    return id;
+  }
+
+  public void setId(Integer id) {
+    this.id = id;
+  }
+
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
   public String getCode() {
     return code;
   }
@@ -96,6 +119,7 @@ public class AccessControlDTO {
     this.designation_eng = designation_eng;
   }
 
+<<<<<<< HEAD
   public String getDescription() {
     return description;
   }
@@ -126,6 +150,22 @@ public class AccessControlDTO {
 
   public void setUser_creation(String user_creation) {
     this.user_creation = user_creation;
+=======
+  public Utilisateur getUser() {
+    return user;
+  }
+
+  public void setUser(Utilisateur user) {
+    this.user = user;
+  }
+
+  public Group_user getGroup() {
+    return group;
+  }
+
+  public void setGroup(Group_user group) {
+    this.group = group;
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
   }
 }
 

@@ -5,6 +5,10 @@ import com.csys.template.dto.ModuleDTO;
 import com.csys.template.factory.ModuleFactory;
 import com.csys.template.repository.ModuleRepository;
 import com.google.common.base.Preconditions;
+<<<<<<< HEAD
+=======
+import java.lang.Integer;
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
 import java.util.Collection;
 import java.util.Optional;
 import org.slf4j.Logger;
@@ -46,17 +50,28 @@ public class ModuleService {
    * @param moduleDTO
    * @return the updated entity
    */
+<<<<<<< HEAD
 @Transactional
 public ModuleDTO update(ModuleDTO moduleDTO) {
     log.debug("Request to update Module: {}",moduleDTO);
     Optional<Module> moduleOptional = moduleRepository.findById(moduleDTO.getIdModule());
     Module inBase = moduleOptional.orElseThrow(() -> new IllegalArgumentException("module.NotFound"));
+=======
+  public ModuleDTO update(ModuleDTO moduleDTO) {
+    log.debug("Request to update Module: {}",moduleDTO);
+      Optional<Module> inBase= moduleRepository.findById(moduleDTO.getIdModule());
+    Preconditions.checkArgument(inBase != null, "module.NotFound");
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
     Module module = ModuleFactory.moduleDTOToModule(moduleDTO);
     module = moduleRepository.save(module);
     ModuleDTO resultDTO = ModuleFactory.moduleToModuleDTO(module);
     return resultDTO;
+<<<<<<< HEAD
 }
 
+=======
+  }
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
 
   /**
    * Get one moduleDTO by id.
@@ -64,6 +79,7 @@ public ModuleDTO update(ModuleDTO moduleDTO) {
    * @param id the id of the entity
    * @return the entity DTO
    */
+<<<<<<< HEAD
 @Transactional(readOnly = true)
 public ModuleDTO findOne(Integer id) {
     log.debug("Request to get Module: {}",id);
@@ -72,6 +88,19 @@ public ModuleDTO findOne(Integer id) {
     return module != null ? ModuleFactory.moduleToModuleDTO(module) : null;
 }
 
+=======
+
+  @Transactional(
+      readOnly = true
+  )
+  public ModuleDTO findOne(Integer id) {
+    log.debug("Request to get Module: {}",id);
+      Optional<Module> moduleOptional= moduleRepository.findById(id);
+      Module module = moduleOptional.orElseThrow(() -> new IllegalArgumentException("Module not found"));
+    ModuleDTO dto = ModuleFactory.moduleToModuleDTO(module);
+    return dto;
+  }
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
 
   /**
    * Get one module by id.
@@ -79,6 +108,7 @@ public ModuleDTO findOne(Integer id) {
    * @param id the id of the entity
    * @return the entity
    */
+<<<<<<< HEAD
 @Transactional(readOnly = true)
 public Module findModule(Integer id) {
     log.debug("Request to get Module: {}",id);
@@ -86,6 +116,17 @@ public Module findModule(Integer id) {
     return moduleOptional.orElse(null);
 }
 
+=======
+
+  @Transactional(
+      readOnly = true
+  )
+  public Module findModule(Integer id) {
+    log.debug("Request to get Module: {}",id);
+      Optional<Module> moduleOptional= moduleRepository.findById(id);
+    return moduleOptional.orElse(null);
+  }
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
 
   /**
    * Get all the modules.

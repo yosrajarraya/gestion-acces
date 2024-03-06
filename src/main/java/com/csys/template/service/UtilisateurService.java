@@ -4,6 +4,10 @@ import com.csys.template.domain.Utilisateur;
 import com.csys.template.dto.UtilisateurDTO;
 import com.csys.template.factory.UtilisateurFactory;
 import com.csys.template.repository.UtilisateurRepository;
+<<<<<<< HEAD
+=======
+import com.google.common.base.Preconditions;
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
 import java.lang.Integer;
 import java.util.Collection;
 import java.util.Optional;
@@ -46,17 +50,28 @@ public class UtilisateurService {
    * @param utilisateurDTO
    * @return the updated entity
    */
+<<<<<<< HEAD
 @Transactional
 public UtilisateurDTO update(UtilisateurDTO utilisateurDTO) {
     log.debug("Request to update Utilisateur: {}",utilisateurDTO);
     Optional<Utilisateur> utilisateurOptional = utilisateurRepository.findById(utilisateurDTO.getIdUser());
     Utilisateur inBase = utilisateurOptional.orElseThrow(() -> new IllegalArgumentException("utilisateur.NotFound"));
+=======
+  public UtilisateurDTO update(UtilisateurDTO utilisateurDTO) {
+    log.debug("Request to update Utilisateur: {}",utilisateurDTO);
+      Optional<Utilisateur> inBase= utilisateurRepository.findById(utilisateurDTO.getId_user());
+    Preconditions.checkArgument(inBase != null, "utilisateur.NotFound");
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
     Utilisateur utilisateur = UtilisateurFactory.utilisateurDTOToUtilisateur(utilisateurDTO);
     utilisateur = utilisateurRepository.save(utilisateur);
     UtilisateurDTO resultDTO = UtilisateurFactory.utilisateurToUtilisateurDTO(utilisateur);
     return resultDTO;
+<<<<<<< HEAD
 }
 
+=======
+  }
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
 
   /**
    * Get one utilisateurDTO by id.
@@ -64,6 +79,7 @@ public UtilisateurDTO update(UtilisateurDTO utilisateurDTO) {
    * @param id the id of the entity
    * @return the entity DTO
    */
+<<<<<<< HEAD
 @Transactional(readOnly = true)
 public UtilisateurDTO findOne(Integer id) {
     log.debug("Request to get Utilisateur: {}",id);
@@ -72,6 +88,20 @@ public UtilisateurDTO findOne(Integer id) {
     return utilisateur != null ? UtilisateurFactory.utilisateurToUtilisateurDTO(utilisateur) : null;
 }
 
+=======
+  
+ 
+  @Transactional(
+      readOnly = true
+  )
+  public UtilisateurDTO findOne(Integer id) {
+    log.debug("Request to get Utilisateur: {}",id);
+      Optional<Utilisateur> utilisateurOptional= utilisateurRepository.findById(id);
+      Utilisateur utilisateur = utilisateurOptional.orElseThrow(() -> new IllegalArgumentException("Form not found"));
+    UtilisateurDTO dto = UtilisateurFactory.utilisateurToUtilisateurDTO(utilisateur);
+    return dto;
+  }
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
 
   /**
    * Get one utilisateur by id.
@@ -79,6 +109,7 @@ public UtilisateurDTO findOne(Integer id) {
    * @param id the id of the entity
    * @return the entity
    */
+<<<<<<< HEAD
   @Transactional(readOnly = true)
 public Utilisateur findUtilisateur(Integer id) {
     log.debug("Request to get Utilisateur: {}", id);
@@ -86,6 +117,16 @@ public Utilisateur findUtilisateur(Integer id) {
     return utilisateurOptional.orElse(null);
 }
 
+=======
+  @Transactional(
+      readOnly = true
+  )
+  public Utilisateur findUtilisateur(Integer id) {
+    log.debug("Request to get Utilisateur: {}",id);
+      Optional<Utilisateur> utilisateurOptional= utilisateurRepository.findById(id);
+    return utilisateurOptional.orElse(null);
+  }
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
   /**
    * Get all the utilisateurs.
    *

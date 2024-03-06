@@ -4,8 +4,15 @@ import com.csys.template.domain.Clinique;
 import com.csys.template.dto.CliniqueDTO;
 import com.csys.template.factory.CliniqueFactory;
 import com.csys.template.repository.CliniqueRepository;
+<<<<<<< HEAD
 import java.lang.Integer;
 import java.util.Collection;
+=======
+import com.google.common.base.Preconditions;
+import java.lang.Integer;
+import java.util.Collection;
+import java.util.List;
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
 import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,11 +33,14 @@ public class CliniqueService {
     this.cliniqueRepository=cliniqueRepository;
   }
 
+<<<<<<< HEAD
    public Collection<CliniqueDTO> findCliniqueByName(String name) {
     log.debug("Request to get All Cliniques");
     Collection<Clinique> result= cliniqueRepository.findCliniquesByName(name);
     return CliniqueFactory.cliniqueToCliniqueDTOs(result);
    }
+=======
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
   /**
    * Save a cliniqueDTO.
    *
@@ -51,15 +61,26 @@ public class CliniqueService {
    * @param cliniqueDTO
    * @return the updated entity
    */
+<<<<<<< HEAD
  public CliniqueDTO update(CliniqueDTO cliniqueDTO) {
     log.debug("Request to update Clinique: {}",cliniqueDTO);
     Optional<Clinique> cliniqueOptional = cliniqueRepository.findById(cliniqueDTO.getId_clinique());
     Clinique inBase = cliniqueOptional.orElseThrow(() -> new IllegalArgumentException("clinique.NotFound"));
+=======
+  public CliniqueDTO update(CliniqueDTO cliniqueDTO) {
+    log.debug("Request to update Clinique: {}",cliniqueDTO);
+      Optional<Clinique> inBase= cliniqueRepository.findById(cliniqueDTO.getId_clinique());
+    Preconditions.checkArgument(inBase != null, "clinique.NotFound");
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
     Clinique clinique = CliniqueFactory.cliniqueDTOToClinique(cliniqueDTO);
     clinique = cliniqueRepository.save(clinique);
     CliniqueDTO resultDTO = CliniqueFactory.cliniqueToCliniqueDTO(clinique);
     return resultDTO;
+<<<<<<< HEAD
 }
+=======
+  }
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
 
   /**
    * Get one cliniqueDTO by id.
@@ -67,6 +88,7 @@ public class CliniqueService {
    * @param id the id of the entity
    * @return the entity DTO
    */
+<<<<<<< HEAD
 @Transactional(readOnly = true)
 public CliniqueDTO findOne(Integer id_clinique) {
     log.debug("Request to get Clinique: {}", id_clinique);
@@ -75,12 +97,27 @@ public CliniqueDTO findOne(Integer id_clinique) {
     return clinique != null ? CliniqueFactory.cliniqueToCliniqueDTO(clinique) : null;
 }
 
+=======
+ 
+
+  @Transactional(
+      readOnly = true
+  )
+  public CliniqueDTO findOne(Integer id) {
+    log.debug("Request to get Clinique: {}",id);
+      Optional<Clinique> cliniqueOptional= cliniqueRepository.findById(id);
+       Clinique clinique = cliniqueOptional.orElseThrow(() -> new IllegalArgumentException("Form not found"));
+    CliniqueDTO dto = CliniqueFactory.cliniqueToCliniqueDTO(clinique);
+    return dto;
+  }
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
 
   /**
    * Get one clinique by id.
    *
    * @param id the id of the entity
    * @return the entity
+<<<<<<< HEAD
    */
 @Transactional(readOnly = true)
 public Clinique findClinique(Integer id_clinique) {
@@ -88,6 +125,17 @@ public Clinique findClinique(Integer id_clinique) {
     Optional<Clinique> cliniqueOptional = cliniqueRepository.findById(id_clinique);
     return cliniqueOptional.orElse(null);
 }
+=======
+*/
+  @Transactional(
+      readOnly = true
+  )
+  public Clinique findClinique(Integer id) {
+    log.debug("Request to get Clinique: {}",id);
+    Optional<Clinique> cliniqueOptional= cliniqueRepository.findById(id);
+    return cliniqueOptional.orElse(null);
+  }
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
 
   /**
    * Get all the cliniques.
@@ -113,7 +161,16 @@ public Clinique findClinique(Integer id_clinique) {
     cliniqueRepository.deleteById(id);
   }
   
+<<<<<<< HEAD
    
    
+=======
+     @Transactional(readOnly = true)
+    public Collection<CliniqueDTO> findByCliniqueName(String name) {
+        log.debug("Request to find users by clinique name: {}", name);
+        Collection<Clinique> cliniques = cliniqueRepository.findByCliniqueName(name);
+        return CliniqueFactory.cliniqueToCliniqueDTOs(cliniques);
+    }
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
 }
 

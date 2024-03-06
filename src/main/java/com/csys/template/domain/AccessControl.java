@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package com.csys.template.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -7,6 +8,21 @@ import java.time.LocalDateTime;
 import javax.persistence.*;
 import javax.persistence.Id;
 
+=======
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.csys.template.domain;
+
+import java.io.Serializable;
+import javax.persistence.*;
+import javax.persistence.Id;
+
+import javax.validation.Valid;
+
+
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
 @Entity
 @Table(name = "Access_Control", schema = "dbo")
 public class AccessControl implements Serializable {
@@ -14,6 +30,7 @@ public class AccessControl implements Serializable {
     @Id
     @GeneratedValue
     @Column(name = "id")
+<<<<<<< HEAD
     private Long id;
 
    
@@ -26,6 +43,10 @@ public class AccessControl implements Serializable {
     private Group_user groupId;
 
     @Column(name = "code")
+=======
+    private Integer id;   
+   @Column(name = "code")
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
     private String code;
 
     @Column(name = "active")
@@ -39,6 +60,7 @@ public class AccessControl implements Serializable {
 
     @Column(name = "designation_eng")
     private String designation_eng;
+<<<<<<< HEAD
 
     @Column(name = "description")
     private String description;
@@ -82,6 +104,21 @@ public class AccessControl implements Serializable {
     public String getCode() {
         return code;
     }
+=======
+  @ManyToOne
+    @JoinColumn(name = "user_id")
+    @Valid 
+    private Utilisateur user;
+
+    @ManyToOne
+    @JoinColumn(name = "group_id")
+    @Valid 
+    private Group_user group;
+
+   public String getCode() {
+    return code;
+}
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
 
     public void setCode(String code) {
         this.code = code;
@@ -118,6 +155,7 @@ public class AccessControl implements Serializable {
     public void setDesignation_eng(String designation_eng) {
         this.designation_eng = designation_eng;
     }
+<<<<<<< HEAD
 
     public String getDescription() {
         return description;
@@ -157,3 +195,33 @@ public class AccessControl implements Serializable {
 
     
 
+=======
+  
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Utilisateur getUser() {
+        return user;
+    }
+
+    public void setUser(Utilisateur user) {
+        this.user = user;
+    }
+
+    public Group_user getGroup() {
+        return group;
+    }
+
+    public void setGroup(Group_user  group) {
+        this.group = group;
+    }
+    
+    
+}
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb

@@ -1,9 +1,14 @@
 package com.csys.template.dto;
 
+<<<<<<< HEAD
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.time.LocalDateTime;
+=======
+import java.lang.Integer;
+import java.lang.String;
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
 
 public class Group_userDTO {
   private Integer id_group;
@@ -18,12 +23,15 @@ public class Group_userDTO {
 
   private String designation_eng;
 
+<<<<<<< HEAD
   private Boolean active;
 
   private LocalDateTime userCreation;
 
   private LocalDateTime dateCreation;
 
+=======
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
   public Integer getId_group() {
     return id_group;
   }
@@ -71,6 +79,7 @@ public class Group_userDTO {
   public void setDesignation_eng(String designation_eng) {
     this.designation_eng = designation_eng;
   }
+<<<<<<< HEAD
 
   public Boolean getActive() {
     return active;
@@ -95,5 +104,7 @@ public class Group_userDTO {
   public void setDateCreation(LocalDateTime dateCreation) {
     this.dateCreation = dateCreation;
   }
+=======
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
 }
 

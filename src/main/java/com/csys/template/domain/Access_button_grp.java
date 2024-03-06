@@ -4,6 +4,7 @@
  */
 package com.csys.template.domain;
 
+<<<<<<< HEAD
 
 import javax.persistence.*;
 
@@ -11,19 +12,39 @@ import javax.persistence.*;
 @Table(name = "access_form_grp", schema = "dbo")
 public class Access_button_grp {
     @Id
+=======
+/**
+ *
+ * @author Yosra
+ */
+import javax.persistence.*;
+
+@Entity
+@Table(name = "access_button_grp", schema = "dbo")
+public class Access_button_grp {
+      @Id
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
     
+<<<<<<< HEAD
     @Column(name = "id_form")
     private Integer idForm;
+=======
+    @Column(name = "id_button")
+    private Integer idButton;
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
     
     @Column(name = "id_group")
     private Integer idGroup;
     
+<<<<<<< HEAD
     @Column(name = "id_module")
     private Integer idModule;
     
+=======
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
     @Column(name = "name")
     private String name;
     
@@ -48,6 +69,7 @@ public class Access_button_grp {
     @Column(name = "control")
     private String control;
 
+<<<<<<< HEAD
     // Getters and setters
     
     @Override
@@ -66,6 +88,23 @@ public class Access_button_grp {
                 ", visible=" + visible +
                 ", control='" + control + '\'' +
                 '}';
+=======
+    public Access_button_grp() {
+    }
+
+    public Access_button_grp(Integer id, Integer idButton, Integer idGroup, String name, String code, Boolean active, String designationAr, String designationFr, String designationEng, Boolean visible, String control) {
+        this.id = id;
+        this.idButton = idButton;
+        this.idGroup = idGroup;
+        this.name = name;
+        this.code = code;
+        this.active = active;
+        this.designationAr = designationAr;
+        this.designationFr = designationFr;
+        this.designationEng = designationEng;
+        this.visible = visible;
+        this.control = control;
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
     }
 
     public Integer getId() {
@@ -76,12 +115,21 @@ public class Access_button_grp {
         this.id = id;
     }
 
+<<<<<<< HEAD
     public Integer getIdForm() {
         return idForm;
     }
 
     public void setIdForm(Integer idForm) {
         this.idForm = idForm;
+=======
+    public Integer getIdButton() {
+        return idButton;
+    }
+
+    public void setIdButton(Integer idButton) {
+        this.idButton = idButton;
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
     }
 
     public Integer getIdGroup() {
@@ -92,6 +140,7 @@ public class Access_button_grp {
         this.idGroup = idGroup;
     }
 
+<<<<<<< HEAD
     public Integer getIdModule() {
         return idModule;
     }
@@ -100,6 +149,8 @@ public class Access_button_grp {
         this.idModule = idModule;
     }
 
+=======
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
     public String getName() {
         return name;
     }

@@ -1,19 +1,28 @@
 package com.csys.template.service;
 
 import com.csys.template.domain.AccessControl;
+<<<<<<< HEAD
 import com.csys.template.domain.Utilisateur;
+=======
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
 import com.csys.template.dto.AccessControlDTO;
 import com.csys.template.factory.AccessControlFactory;
 import com.csys.template.repository.AccessControlRepository;
 import com.google.common.base.Preconditions;
 import java.lang.Integer;
 import java.util.Collection;
+<<<<<<< HEAD
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+=======
+import java.util.Optional;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -24,11 +33,17 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class AccessControlService {
   private final Logger log = LoggerFactory.getLogger(AccessControlService.class);
+<<<<<<< HEAD
   
 @Autowired
 private final AccessControlRepository accesscontrolRepository;
 
 @Autowired
+=======
+
+  private final AccessControlRepository accesscontrolRepository;
+
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
   public AccessControlService(AccessControlRepository accesscontrolRepository) {
     this.accesscontrolRepository=accesscontrolRepository;
   }
@@ -53,6 +68,7 @@ private final AccessControlRepository accesscontrolRepository;
    * @param accesscontrolDTO
    * @return the updated entity
    */
+<<<<<<< HEAD
   public AccessControlDTO update(AccessControlDTO accesscontrolDTO) {
     log.debug("Request to update AccessControl: {}",accesscontrolDTO);
       Optional<AccessControl> inBase= accesscontrolRepository.findById(accesscontrolDTO.getId());
@@ -62,6 +78,19 @@ private final AccessControlRepository accesscontrolRepository;
     AccessControlDTO resultDTO = AccessControlFactory.accesscontrolToAccessControlDTO(accesscontrol);
     return resultDTO;
   }
+=======
+ @Transactional
+public AccessControlDTO update(AccessControlDTO accessControlDTO) {
+    log.debug("Request to update AccessControl: {}",accessControlDTO);
+    Optional<AccessControl> accessControlOptional = accesscontrolRepository.findById(accessControlDTO.getId());
+    AccessControl inBase = accessControlOptional.orElseThrow(() -> new IllegalArgumentException("accessControl.NotFound"));
+    AccessControl accessControl = AccessControlFactory.accesscontrolDTOToAccessControl(accessControlDTO);
+    accessControl = accesscontrolRepository.save(accessControl);
+    AccessControlDTO resultDTO = AccessControlFactory.accesscontrolToAccessControlDTO(accessControl);
+    return resultDTO;
+}
+
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
 
   /**
    * Get one accesscontrolDTO by id.
@@ -69,6 +98,7 @@ private final AccessControlRepository accesscontrolRepository;
    * @param id the id of the entity
    * @return the entity DTO
    */
+<<<<<<< HEAD
   @Transactional(
       readOnly = true
   )
@@ -79,6 +109,15 @@ private final AccessControlRepository accesscontrolRepository;
     AccessControlDTO dto = AccessControlFactory.accesscontrolToAccessControlDTO(accesscontrol);
     return dto;
   }
+=======
+@Transactional(readOnly = true)
+public AccessControlDTO findOne(Integer id) {
+    log.debug("Request to get AccessControl: {}",id);
+    Optional<AccessControl> accessControlOptional = accesscontrolRepository.findById(id);
+    AccessControl accessControl = accessControlOptional.orElse(null);
+    return accessControl != null ? AccessControlFactory.accesscontrolToAccessControlDTO(accessControl) : null;
+}
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
 
   /**
    * Get one accesscontrol by id.
@@ -86,6 +125,7 @@ private final AccessControlRepository accesscontrolRepository;
    * @param id the id of the entity
    * @return the entity
    */
+<<<<<<< HEAD
   @Transactional(
       readOnly = true
   )
@@ -94,6 +134,14 @@ private final AccessControlRepository accesscontrolRepository;
       Optional<AccessControl> accesscontrol= accesscontrolRepository.findById(id);
     return accesscontrol.orElse(null);
   }
+=======
+@Transactional(readOnly = true)
+public AccessControl findAccessControl(Integer id) {
+    log.debug("Request to get AccessControl: {}",id);
+    Optional<AccessControl> accessControlOptional = accesscontrolRepository.findById(id);
+    return accessControlOptional.orElse(null);
+}
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
 
   /**
    * Get all the accesscontrols.
@@ -114,6 +162,7 @@ private final AccessControlRepository accesscontrolRepository;
    *
    * @param id the id of the entity
    */
+<<<<<<< HEAD
   public void delete(Long id) {
     log.debug("Request to delete AccessControl: {}",id);
     accesscontrolRepository.deleteById(id);
@@ -121,3 +170,11 @@ private final AccessControlRepository accesscontrolRepository;
   
 
 }
+=======
+  public void delete(Integer id) {
+    log.debug("Request to delete AccessControl: {}",id);
+    accesscontrolRepository.deleteById(id);
+  }
+}
+
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb

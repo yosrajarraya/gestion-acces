@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 tailleCodeFournisseur : 10
 
 medicationsNamingStrategy: brand+forme+unitedosage+generic
+=======
+tailleCodeFournisseur : 10
+
+medicationsNamingStrategy: brand+forme+unitedosage+generic
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
 medicalNamingStrategy: generic+brand
