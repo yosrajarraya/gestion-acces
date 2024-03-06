@@ -63,16 +63,26 @@ public class Group_userService {
    * @param id the id of the entity
    * @return the entity DTO
    */
+<<<<<<< HEAD
+=======
   
   
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
   @Transactional(
       readOnly = true
   )
   public Group_userDTO findOne(Integer id) {
     log.debug("Request to get Group_user: {}",id);
+<<<<<<< HEAD
+      Optional<Group_user> group_user= group_userRepository.findById(id);
+     Group_user group_user_op = group_user.orElseThrow(() -> new IllegalArgumentException("Form not found"));
+
+    Group_userDTO dto = Group_userFactory.group_userToGroup_userDTO(group_user_op);
+=======
       Optional<Group_user> group_userOptional= group_userRepository.findById(id);
       Group_user group_user = group_userOptional.orElseThrow(() -> new IllegalArgumentException("Group user not found"));
     Group_userDTO dto = Group_userFactory.group_userToGroup_userDTO(group_user);
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
     return dto;
   }
 
@@ -82,14 +92,22 @@ public class Group_userService {
    * @param id the id of the entity
    * @return the entity
    */
+<<<<<<< HEAD
+=======
 
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
   @Transactional(
       readOnly = true
   )
   public Group_user findGroup_user(Integer id) {
     log.debug("Request to get Group_user: {}",id);
+<<<<<<< HEAD
+      Optional<Group_user> group_user= group_userRepository.findById(id);
+    return group_user.orElse(null);
+=======
       Optional<Group_user> group_userOptional= group_userRepository.findById(id);
     return group_userOptional.orElse(null);
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
   }
 
   /**

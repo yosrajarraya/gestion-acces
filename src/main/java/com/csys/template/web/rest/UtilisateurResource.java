@@ -53,15 +53,24 @@ public class UtilisateurResource {
   @PostMapping("/utilisateurs")
   public ResponseEntity<UtilisateurDTO> createUtilisateur(@Valid @RequestBody UtilisateurDTO utilisateurDTO, BindingResult bindingResult) throws URISyntaxException, MethodArgumentNotValidException {
     log.debug("REST request to save Utilisateur : {}", utilisateurDTO);
+<<<<<<< HEAD
+    if ( utilisateurDTO.getIdUser() != null) {
+      bindingResult.addError( new FieldError("UtilisateurDTO","idUser","POST method does not accepte "+ENTITY_NAME+" with code"));
+=======
     if ( utilisateurDTO.getId_user() != null) {
       bindingResult.addError( new FieldError("UtilisateurDTO","id_user","POST method does not accepte "+ENTITY_NAME+" with code"));
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
       throw new MethodArgumentNotValidException(null, bindingResult);
     }
     if (bindingResult.hasErrors()) {
       throw new MethodArgumentNotValidException(null, bindingResult);
     }
     UtilisateurDTO result = utilisateurService.save(utilisateurDTO);
+<<<<<<< HEAD
+    return ResponseEntity.created( new URI("/api/utilisateurs/"+ result.getIdUser())).body(result);
+=======
     return ResponseEntity.created( new URI("/api/utilisateurs/"+ result.getId_user())).body(result);
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
   }
 
   /**
@@ -77,7 +86,11 @@ public class UtilisateurResource {
   @PutMapping("/utilisateurs/{id}")
   public ResponseEntity<UtilisateurDTO> updateUtilisateur(@PathVariable Integer id, @Valid @RequestBody UtilisateurDTO utilisateurDTO) throws MethodArgumentNotValidException {
     log.debug("Request to update Utilisateur: {}",id);
+<<<<<<< HEAD
+    utilisateurDTO.setIdUser(id);
+=======
     utilisateurDTO.setId_user(id);
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
     UtilisateurDTO result =utilisateurService.update(utilisateurDTO);
     return ResponseEntity.ok().body(result);
   }

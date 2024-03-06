@@ -3,11 +3,24 @@ package com.csys.template.dto;
 import com.csys.template.domain.Group_user;
 import com.csys.template.domain.Utilisateur;
 import java.lang.Boolean;
+<<<<<<< HEAD
+import java.lang.Long;
+import java.lang.String;
+import java.time.LocalDateTime;
+
+public class AccessControlDTO {
+  private Long id;
+
+  private Utilisateur user_id;
+
+  private Group_user groupId;
+=======
 import java.lang.Integer;
 import java.lang.String;
 
 public class AccessControlDTO {
   private Integer id;
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
 
   private String code;
 
@@ -19,6 +32,40 @@ public class AccessControlDTO {
 
   private String designation_eng;
 
+<<<<<<< HEAD
+  private String description;
+
+  private LocalDateTime date_expiration;
+
+  private LocalDateTime date_creation;
+
+  private String user_creation;
+
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
+
+  public Utilisateur getUser_id() {
+    return user_id;
+  }
+
+  public void setUser_id(Utilisateur user_id) {
+    this.user_id = user_id;
+  }
+
+  public Group_user getGroup_id() {
+    return groupId;
+  }
+
+  public void setGroup_id(Group_user group_id) {
+    this.groupId = group_id;
+  }
+
+=======
   private Utilisateur user;
 
   private Group_user group;
@@ -31,6 +78,7 @@ public class AccessControlDTO {
     this.id = id;
   }
 
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
   public String getCode() {
     return code;
   }
@@ -71,6 +119,38 @@ public class AccessControlDTO {
     this.designation_eng = designation_eng;
   }
 
+<<<<<<< HEAD
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+  public LocalDateTime getDate_expiration() {
+    return date_expiration;
+  }
+
+  public void setDate_expiration(LocalDateTime date_expiration) {
+    this.date_expiration = date_expiration;
+  }
+
+  public LocalDateTime getDate_creation() {
+    return date_creation;
+  }
+
+  public void setDate_creation(LocalDateTime date_creation) {
+    this.date_creation = date_creation;
+  }
+
+  public String getUser_creation() {
+    return user_creation;
+  }
+
+  public void setUser_creation(String user_creation) {
+    this.user_creation = user_creation;
+=======
   public Utilisateur getUser() {
     return user;
   }
@@ -85,6 +165,7 @@ public class AccessControlDTO {
 
   public void setGroup(Group_user group) {
     this.group = group;
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
   }
 }
 

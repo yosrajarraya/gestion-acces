@@ -1,16 +1,30 @@
 package com.csys.template.domain;
 
+<<<<<<< HEAD
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+=======
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import javax.persistence.*;
 
 @Entity
 @Table(name = "Utilisateur", schema = "dbo")
+<<<<<<< HEAD
+public class Utilisateur implements Serializable {
+   @Id
+    @GeneratedValue
+    @Column(name = "id_user")
+    private Integer idUser;
+    
+=======
 public class Utilisateur implements Serializable  {
  @Id
 @GeneratedValue
 @Column(name = "id_user")
     private Integer id_user;
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
     @Column(name = "code")
     private String code;
     
@@ -18,12 +32,51 @@ public class Utilisateur implements Serializable  {
     private String name;
     
     @Column(name = "date_creation")
+<<<<<<< HEAD
+    private LocalDateTime date_creation;
+
+=======
     private LocalDateTime dateCreation;
     
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
     @Column(name = "password")
     private String password;
     
     @Column(name = "designation_ar")
+<<<<<<< HEAD
+    private String designationAr;
+    
+    @Column(name = "designation_fr")
+    private String designationFr;
+    
+    @Column(name = "designation_eng")
+    private String designationEng;
+
+    @Column(name = "user_creation")
+    private String userCreation;
+
+    @Column(name = "active")
+    private Boolean active;
+
+
+public Utilisateur() {
+ 
+}
+
+    @JsonCreator
+    public Utilisateur(@JsonProperty("id_user") Integer idUser) {
+        this.idUser = idUser;
+       
+    }
+
+
+    public Integer getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(Integer idUser) {
+        this.idUser = idUser;
+=======
     private String designation_ar;
     
     @Column(name = "designation_fr")
@@ -60,6 +113,7 @@ public class Utilisateur implements Serializable  {
 
     public void setIdUser(Integer idUser) {
         this.id_user = idUser;
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
     }
 
     public String getCode() {
@@ -78,12 +132,21 @@ public class Utilisateur implements Serializable  {
         this.name = name;
     }
 
+<<<<<<< HEAD
+    public LocalDateTime getDate_creation() {
+        return date_creation;
+    }
+
+    public void setDate_creation(LocalDateTime date_creation) {
+        this.date_creation = date_creation;
+=======
     public LocalDateTime getDateCreation() {
         return dateCreation;
     }
 
     public void setDateCreation(LocalDateTime dateCreation) {
         this.dateCreation = dateCreation;
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
     }
 
     public String getPassword() {
@@ -94,6 +157,38 @@ public class Utilisateur implements Serializable  {
         this.password = password;
     }
 
+<<<<<<< HEAD
+    public String getDesignationAr() {
+        return designationAr;
+    }
+
+    public void setDesignationAr(String designationAr) {
+        this.designationAr = designationAr;
+    }
+
+    public String getDesignationFr() {
+        return designationFr;
+    }
+
+    public void setDesignationFr(String designationFr) {
+        this.designationFr = designationFr;
+    }
+
+    public String getDesignationEng() {
+        return designationEng;
+    }
+
+    public void setDesignationEng(String designationEng) {
+        this.designationEng = designationEng;
+    }
+
+    public String getUserCreation() {
+        return userCreation;
+    }
+
+    public void setUserCreation(String userCreation) {
+        this.userCreation = userCreation;
+=======
     public String getDesignation_ar() {
         return designation_ar;
     }
@@ -124,6 +219,7 @@ public class Utilisateur implements Serializable  {
 
     public void setUser_creation(String user_creation) {
         this.user_creation = user_creation;
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
     }
 
     public Boolean getActive() {
@@ -133,7 +229,10 @@ public class Utilisateur implements Serializable  {
     public void setActive(Boolean active) {
         this.active = active;
     }
+<<<<<<< HEAD
+=======
        
   
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
    
 }

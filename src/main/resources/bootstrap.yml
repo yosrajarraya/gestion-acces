@@ -7,3 +7,14 @@ spring:
     cloud:
         config:
             uri: http://config-server:9090
+
+
+spring:
+    application:
+        name: facturation-core
+#    profiles:
+#        active: 
+    cloud:
+        config:
+            uri: http://config-server:9090
+

@@ -20,8 +20,12 @@ public class Access_menu_grp {
     @Column(name = "id_group_user")
     private Integer idGroupUser;
     
+<<<<<<< HEAD
+  
+=======
     @Column(name = "module")
     private String module;
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
     
     @Column(name = "visible")
     private Boolean visible;
@@ -34,7 +38,11 @@ public class Access_menu_grp {
                 "id=" + id +
                 ", idMenu=" + idMenu +
                 ", idGroupUser=" + idGroupUser +
+<<<<<<< HEAD
+//                ", module='" + module + '\'' +
+=======
                 ", module='" + module + '\'' +
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
                 ", visible=" + visible +
                 '}';
     }
@@ -63,6 +71,15 @@ public class Access_menu_grp {
         this.idGroupUser = idGroupUser;
     }
 
+<<<<<<< HEAD
+//    public String getModule() {
+//        return module;
+//    }
+//
+//    public void setModule(String module) {
+//        this.module = module;
+//    }
+=======
     public String getModule() {
         return module;
     }
@@ -70,6 +87,7 @@ public class Access_menu_grp {
     public void setModule(String module) {
         this.module = module;
     }
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
 
     public Boolean getVisible() {
         return visible;

@@ -49,7 +49,11 @@ public class ButtonService {
    */
   public ButtonDTO update(ButtonDTO buttonDTO) {
     log.debug("Request to update Button: {}",buttonDTO);
+<<<<<<< HEAD
+    Optional<Button> inBase= buttonRepository.findById(buttonDTO.getIdButton());
+=======
       Optional<Button> inBase= buttonRepository.findById(buttonDTO.getIdButton());
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
     Preconditions.checkArgument(inBase != null, "button.NotFound");
     Button button = ButtonFactory.buttonDTOToButton(buttonDTO);
     button = buttonRepository.save(button);
@@ -63,15 +67,24 @@ public class ButtonService {
    * @param id the id of the entity
    * @return the entity DTO
    */
+<<<<<<< HEAD
+=======
 
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
   @Transactional(
       readOnly = true
   )
   public ButtonDTO findOne(Integer id) {
     log.debug("Request to get Button: {}",id);
+<<<<<<< HEAD
+    Optional<Button> button= buttonRepository.findById(id);
+    Button button_op = button.orElseThrow(() -> new IllegalArgumentException("Form not found"));
+    ButtonDTO dto = ButtonFactory.buttonToButtonDTO(button_op);
+=======
       Optional<Button> buttonOptional= buttonRepository.findById(id);
     Button button = buttonOptional.orElseThrow(() -> new IllegalArgumentException("Module not found"));
     ButtonDTO dto = ButtonFactory.buttonToButtonDTO(button);
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
     return dto;
   }
 
@@ -81,15 +94,23 @@ public class ButtonService {
    * @param id the id of the entity
    * @return the entity
    */
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
   @Transactional(
       readOnly = true
   )
   public Button findButton(Integer id) {
     log.debug("Request to get Button: {}",id);
+<<<<<<< HEAD
+      Optional<Button> button= buttonRepository.findById(id);
+    return button.orElse(null);
+=======
     Optional<Button> buttonOptional= buttonRepository.findById(id);
     return buttonOptional.orElse(null);
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
   }
 
   /**

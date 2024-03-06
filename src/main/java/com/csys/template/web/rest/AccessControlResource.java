@@ -1,14 +1,26 @@
 package com.csys.template.web.rest;
 
+<<<<<<< HEAD
+import com.csys.template.domain.Utilisateur;
+import com.csys.template.dto.AccessControlDTO;
+import com.csys.template.service.AccessControlService;
+import com.csys.template.util.RestPreconditions;
+import java.lang.Long;
+=======
 import com.csys.template.dto.AccessControlDTO;
 import com.csys.template.service.AccessControlService;
 import com.csys.template.util.RestPreconditions;
 import java.lang.Integer;
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
 import java.lang.String;
 import java.lang.Void;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Collection;
+<<<<<<< HEAD
+import java.util.List;
+=======
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
 import javax.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -75,7 +87,11 @@ public class AccessControlResource {
    * @throws org.springframework.web.bind.MethodArgumentNotValidException
    */
   @PutMapping("/accesscontrols/{id}")
+<<<<<<< HEAD
+  public ResponseEntity<AccessControlDTO> updateAccessControl(@PathVariable Long id, @Valid @RequestBody AccessControlDTO accesscontrolDTO) throws MethodArgumentNotValidException {
+=======
   public ResponseEntity<AccessControlDTO> updateAccessControl(@PathVariable Integer id, @Valid @RequestBody AccessControlDTO accesscontrolDTO) throws MethodArgumentNotValidException {
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
     log.debug("Request to update AccessControl: {}",id);
     accesscontrolDTO.setId(id);
     AccessControlDTO result =accesscontrolService.update(accesscontrolDTO);
@@ -89,7 +105,11 @@ public class AccessControlResource {
    * @return the ResponseEntity with status 200 (OK) and with body of accesscontrol, or with status 404 (Not Found)
    */
   @GetMapping("/accesscontrols/{id}")
+<<<<<<< HEAD
+  public ResponseEntity<AccessControlDTO> getAccessControl(@PathVariable Long id) {
+=======
   public ResponseEntity<AccessControlDTO> getAccessControl(@PathVariable Integer id) {
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
     log.debug("Request to get AccessControl: {}",id);
     AccessControlDTO dto = accesscontrolService.findOne(id);
     RestPreconditions.checkFound(dto, "accesscontrol.NotFound");
@@ -114,10 +134,18 @@ public class AccessControlResource {
    * @return the ResponseEntity with status 200 (OK)
    */
   @DeleteMapping("/accesscontrols/{id}")
+<<<<<<< HEAD
+  public ResponseEntity<Void> deleteAccessControl(@PathVariable Long id) {
+=======
   public ResponseEntity<Void> deleteAccessControl(@PathVariable Integer id) {
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
     log.debug("Request to delete AccessControl: {}",id);
     accesscontrolService.delete(id);
     return ResponseEntity.ok().build();
   }
+<<<<<<< HEAD
+   
+=======
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
 }
 

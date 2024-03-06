@@ -4,6 +4,13 @@
  */
 package com.csys.template.domain;
 
+<<<<<<< HEAD
+import javax.persistence.*;
+
+@Entity
+@Table(name = "Button", schema = "dbo")
+public class Button {
+=======
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,6 +26,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Button", schema = "dbo")
 public class Button implements Serializable {
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -52,8 +60,16 @@ public class Button implements Serializable {
     @Column(name = "id_menu")
     private Integer idMenu;
 
+<<<<<<< HEAD
+  
+    public Button() {
+    }
+
+    public Button(String name, int codeButton, Integer codeButtonPrincipal, int order, String designationAr, String designationFr, String designationEng, String logo, Integer idMenu) {
+=======
     public Button(int idButton, String name, int codeButton, Integer codeButtonPrincipal, int order, String designationAr, String designationFr, String designationEng, String logo, Integer idMenu) {
         this.idButton = idButton;
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
         this.name = name;
         this.codeButton = codeButton;
         this.codeButtonPrincipal = codeButtonPrincipal;
@@ -65,9 +81,12 @@ public class Button implements Serializable {
         this.idMenu = idMenu;
     }
 
+<<<<<<< HEAD
+=======
     public Button() {
     }
 
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
     public int getIdButton() {
         return idButton;
     }
@@ -147,4 +166,11 @@ public class Button implements Serializable {
     public void setIdMenu(Integer idMenu) {
         this.idMenu = idMenu;
     }
+<<<<<<< HEAD
+
 }
+
+
+=======
+}
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb

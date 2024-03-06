@@ -1,5 +1,9 @@
 package com.csys.template.web.rest;
 
+<<<<<<< HEAD
+import com.csys.template.domain.Clinique;
+=======
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
 import com.csys.template.dto.CliniqueDTO;
 import com.csys.template.service.CliniqueService;
 import com.csys.template.util.RestPreconditions;
@@ -23,6 +27,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+<<<<<<< HEAD
+import org.springframework.web.bind.annotation.RequestParam;
+=======
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -40,7 +48,15 @@ public class CliniqueResource {
   public CliniqueResource(CliniqueService cliniqueService) {
     this.cliniqueService=cliniqueService;
   }
+<<<<<<< HEAD
+@GetMapping("/clinique")
+     public Collection<CliniqueDTO> getCliniqueByName(@RequestParam String name) {
+    log.debug("Request to get all  Cliniques : {}");
+    return cliniqueService.findCliniqueByName(name);
+  }
+=======
 
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
   /**
    * POST  /cliniques : Create a new clinique.
    *
@@ -106,6 +122,10 @@ public class CliniqueResource {
     log.debug("Request to get all  Cliniques : {}");
     return cliniqueService.findAll();
   }
+<<<<<<< HEAD
+  
+=======
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
 
   /**
    * DELETE  /cliniques/{id} : delete the "id" clinique.
@@ -119,6 +139,8 @@ public class CliniqueResource {
     cliniqueService.delete(id);
     return ResponseEntity.ok().build();
   }
+<<<<<<< HEAD
+=======
   @GetMapping("/cliniques/by-name/{name}")
 public ResponseEntity<Collection<CliniqueDTO>> getCliniquesByName(@PathVariable String name) {
     log.debug("Request to get Cliniques by name: {}", name);
@@ -126,5 +148,6 @@ public ResponseEntity<Collection<CliniqueDTO>> getCliniquesByName(@PathVariable 
     return ResponseEntity.ok().body(cliniques);
     
 }
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
 }
 

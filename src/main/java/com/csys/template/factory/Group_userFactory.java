@@ -15,6 +15,12 @@ public class Group_userFactory {
     group_userDTO.setDesignation_ar(group_user.getDesignation_ar());
     group_userDTO.setDesignation_fr(group_user.getDesignation_fr());
     group_userDTO.setDesignation_eng(group_user.getDesignation_eng());
+<<<<<<< HEAD
+    group_userDTO.setActive(group_user.getActive());
+    group_userDTO.setUserCreation(group_user.getUserCreation());
+    group_userDTO.setDateCreation(group_user.getDateCreation());
+=======
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
     return group_userDTO;
   }
 
@@ -26,6 +32,12 @@ public class Group_userFactory {
     group_user.setDesignation_ar(group_userDTO.getDesignation_ar());
     group_user.setDesignation_fr(group_userDTO.getDesignation_fr());
     group_user.setDesignation_eng(group_userDTO.getDesignation_eng());
+<<<<<<< HEAD
+    group_user.setActive(group_userDTO.getActive());
+    group_user.setUserCreation(group_userDTO.getUserCreation());
+    group_user.setDateCreation(group_userDTO.getDateCreation());
+=======
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
     return group_user;
   }
 

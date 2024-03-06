@@ -5,6 +5,10 @@
 package com.csys.template.domain;
 
 
+<<<<<<< HEAD
+import com.fasterxml.jackson.annotation.JsonProperty;
+=======
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
 import javax.persistence.*;
 
 @Entity
@@ -21,8 +25,15 @@ public class Access_menu_user {
     @Column(name = "id_user")
     private Integer idUser;
     
+<<<<<<< HEAD
+//    @ManyToOne
+//    @JoinColumn(name = "module", referencedColumnName = "id_module")
+//    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+//    private Menu module;
+=======
     @Column(name = "module")
     private String module;
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
     
     @Column(name = "visible")
     private Boolean visible;
@@ -38,7 +49,11 @@ public class Access_menu_user {
                 "id=" + id +
                 ", idMenu=" + idMenu +
                 ", idUser=" + idUser +
+<<<<<<< HEAD
+//                ", module='" + module + '\'' +
+=======
                 ", module='" + module + '\'' +
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
                 ", visible=" + visible +
                 ", numDelegate=" + numDelegate +
                 '}';
@@ -68,6 +83,15 @@ public class Access_menu_user {
         this.idUser = idUser;
     }
 
+<<<<<<< HEAD
+//    public Menu getModule() {
+//        return module;
+//    }
+//
+//    public void setModule(Menu module) {
+//        this.module = module;
+//    }
+=======
     public String getModule() {
         return module;
     }
@@ -75,6 +99,7 @@ public class Access_menu_user {
     public void setModule(String module) {
         this.module = module;
     }
+>>>>>>> a8508e1ea48a69676c6f021b457bc180e5cb8cfb
 
     public Boolean getVisible() {
         return visible;
